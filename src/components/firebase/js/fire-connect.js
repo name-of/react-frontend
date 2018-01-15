@@ -12,6 +12,5 @@ const config = {
   };
     firebase.initializeApp(config);
 
- console.log(process.env.REACT_APP_API_KEY);
- export const auth = firebase.auth();
+
   export default firebase;

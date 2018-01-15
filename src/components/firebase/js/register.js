@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../css/register.css';
-import firebase, { auth } from './fire-connect';
+import firebase from './fire-connect';
 
 class Register extends Component {
   constructor(){
@@ -13,6 +13,7 @@ class Register extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.register = this.register.bind(this);
+    this.login = this.login.bind(this);
   }
   handleInputChange(event){
     let target  = event.target;
@@ -23,16 +24,27 @@ class Register extends Component {
       [name]: value
     });
   }
-    register() {
-      firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password).catch(function(error) {
+  register() {
+    firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
+    .catch((error) => {
       // Handle Errors here.
-      let errorCode = error.code;
       let errorMessage = error.message;
       console.log(errorMessage);
-      
     });
   }
-  
+
+  login(){
+    firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
+    .then(() => {
+      console.log("user logged in")
+    })
+    .catch((error) => {
+        var errorMessage = error.message;
+        console.log(errorMessage);
+
+    });
+  }
+
   render() {
     return (
       <div className="register">
