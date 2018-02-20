@@ -1,21 +1,26 @@
 .container{
     text-align: center;
     align-content: center;
+    font-family: 'Roboto', sans-serif;
+    
 }
 .register{
     margin-top: 5%;
     align-content: center;
+
 }
 .register-box{
-    border: 1px solid #563D7C;
-    border-radius: 5px;
+    border: 1px solid ;
+    border-color: rgb(233,233,233);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px 10px 40px 10px;
 }
 
 
 input[type=email], input[type=password] {
     background-color: #ffffff;
     border: none;
-    border-bottom: 2px solid #563D7C;
+    border-bottom: 1px solid #4285F4 ;
     color: #2b2b2b;
     outline: none;
     padding: 12px;
@@ -29,18 +34,25 @@ input[type=email]:focus, input[type=password]:focus {
     margin: 0 auto;
 }
 .buttonAdd{
-    background-color: #ffffff;
-    color: #563D7C;
+    background-color: #4285F4;
+    color: #ffffff ;
     outline: none;
-    padding: 10px 15px;
-    margin: 10px;
-    border: 2px solid #563D7C;
-    border-radius: 5px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+    padding: 10px ;
+    margin: 10px 0 10px 0;
+    box-shadow:0 2px 10px rgba(0, 0, 0, .6);
 }
-.buttonAdd:active, .buttonAdd:focus, .buttonAdd:hover{
-    outline: none;
-    background-color: #563D7C;
+.btnSocial{
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
     color: #ffffff;
+    margin:20px 0 20px 0;
+    outline: none;
+    box-shadow:0 2px 10px rgba(0, 0, 0, .6);
+}
+#btnfb{
+    background-color: #4267B2;
+    
+}
+#btngoogle{
+    background-color: #DC4A38;
 }

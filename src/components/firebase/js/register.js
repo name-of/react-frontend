@@ -24,6 +24,10 @@ class Register extends Component {
       [name]: value
     });
   }
+
+  /* register new user
+  */
+
   register() {
     firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
     .catch((error) => {
@@ -32,6 +36,9 @@ class Register extends Component {
       console.log(errorMessage);
     });
   }
+  
+  /*  login user
+  */
 
   login(){
     firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
@@ -61,8 +68,17 @@ class Register extends Component {
                   <input className="input-box" id="txtpass" type="password" value={this.state.password} name="password" placeholder="Password" onChange = {this.handleInputChange}/>
                 </div>
               </form>
-              <button id="btnlogin" className="buttonAdd btn" onClick = {this.login}>Login</button>
-              <button id="btnsubmit" className="buttonAdd btn" onClick = {this.register}>Register</button>
+              <div className="row">
+                <div className="col"> 
+                  <button id="btnlogin" className="buttonAdd btn btn-block" onClick = {this.login}>Login</button>
+                </div>
+                <div className="col">
+                  <button id="btnsubmit" className="buttonAdd btn btn-block" onClick = {this.register}>Register</button>
+                </div>
+              </div>
+              
+              <button id="btnfb" className="btn btn-block btnSocial">Login With Facebook</button>
+              <button id="btngoogle" className="btn btn-block btnSocial">Login With Google+</button>
             </div>
           </div>
         </div>
@@ -70,5 +86,4 @@ class Register extends Component {
     );
   }
 }
-
 export default Register;
